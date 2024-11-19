@@ -37,17 +37,17 @@ fun ListarGastosScreen(
         topBar = { FinjoyTopBar(drawerState) },
         content = { padding ->
 
+            // Box para garantir que o conteúdo ocupe todo o espaço da tela
             Box(
                 modifier = Modifier
                     .fillMaxSize()
                     .padding(padding)
-                    .padding(16.dp)
             ) {
                 // Lista de Gastos (LazyColumn)
                 LazyColumn(
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(bottom = 70.dp) // Espaço para o botão fixo
+                        .padding(bottom = 100.dp) // Garantir espaço suficiente para os botões
                 ) {
                     // Adiciona o título como o primeiro item
                     item {
@@ -82,21 +82,50 @@ fun ListarGastosScreen(
                     }
                 }
 
-                // Botão de novo gasto (Fixo na parte inferior)
-                Button(
-                    onClick = {
-                        navController.navigate("incluirGastos")
-                    },
+                // Botões fixos na parte inferior
+                Box(
                     modifier = Modifier
-                        .align(Alignment.BottomCenter)
                         .fillMaxWidth()
-                        .padding(16.dp),
-                    shape = RoundedCornerShape(50.dp),
-                    colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF4F7550))
+                        .padding(16.dp)
+                        .align(Alignment.BottomCenter) // Alinha os botões na parte inferior
                 ) {
-                    Text(text = "Novo gasto", fontSize = 20.sp, color = Color.White)
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp),
+                        horizontalArrangement = Arrangement.spacedBy(16.dp) // Espaço entre os botões
+                    ) {
+                        // Botão Novo Gasto
+                        Button(
+                            onClick = {
+                                navController.navigate("incluirGastos")
+                            },
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(50.dp),
+                            shape = RoundedCornerShape(50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF4F7550))
+                        ) {
+                            Text(text = "Novo gasto", fontSize = 20.sp, color = Color.White)
+                        }
+
+                        // Botão Ver Gráfico
+                        Button(
+                            onClick = {
+                                navController.navigate("graficoGastos")
+                            },
+                            modifier = Modifier
+                                .weight(1f)
+                                .height(50.dp),
+                            shape = RoundedCornerShape(50.dp),
+                            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF4F7550))
+                        ) {
+                            Text(text = "Ver Gráfico", fontSize = 20.sp, color = Color.White)
+                        }
+                    }
                 }
             }
+
         }
     )
 }
@@ -156,6 +185,8 @@ fun GastoCard(
         }
     }
 }
+
+
 
 
 //    Column(

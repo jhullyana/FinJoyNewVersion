@@ -8,11 +8,13 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.6"
 activityCompose = "1.9.2"
 composeBom = "2024.04.01"
+mpandroidchartVersion = "v3.1.0"
 navigationCompose = "2.8.2"
 firebaseFirestoreKtx = "25.1.1"
 googleGmsGoogleServices = "4.4.2"
 firebaseDatabase = "21.0.0"
 firebaseFirestore = "25.1.1"
+supportAnnotations = "28.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -33,6 +35,8 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 firebase-firestore-ktx = { group = "com.google.firebase", name = "firebase-firestore-ktx", version.ref = "firebaseFirestoreKtx" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+philjay-mpandroidchart = { module = "com.github.PhilJay:MPAndroidChart", version.ref = "mpandroidchartVersion" }
+support-annotations = { group = "com.android.support", name = "support-annotations", version.ref = "supportAnnotations" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

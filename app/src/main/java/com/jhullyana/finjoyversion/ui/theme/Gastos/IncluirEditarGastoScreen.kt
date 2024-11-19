@@ -300,6 +300,8 @@ fun IncluirEditarGastoScreen(
             ) {
                 Text(text = "Salvar", color = Color.White, fontSize = 18.sp)
             }
+
+
         }
     }
 }
